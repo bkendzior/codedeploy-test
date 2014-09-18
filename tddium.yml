@@ -12,12 +12,11 @@
     :amazon:
         :app_spec_generator: sds/app_spec_generator
         :application_name: SimpleApp
-        :application_generator: sds/sds_application_generator
         :deploy_mapping:
             - :branch: master
               :action: deploy
               :deployment_group: SimpleDG
               :s3_path: bucket=solano-sds,bundleType=zip,key=TestApp.zip
-            - :branch: deploy_mapping
+            - :branch: test*
               :action: publish
-              :s3_path: bucket=solano-sds,bundleType=zip,key=Test-:branch-:session_id.zip
+              :s3_path: bucket=solano-sds,bundleType=zip,key=:branch-:session_id.zip
