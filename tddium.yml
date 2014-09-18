@@ -10,7 +10,7 @@
 
 :deploy:
     :amazon:
-        :app_spec_generator: sds/app_spec_generator
+        :app_spec_template: sds/specs/default.yml
         :application_name: SimpleApp
         :deploy_mapping:
             - :branch: master
