@@ -12,16 +12,16 @@
 :deploy:
     :amazon:
         :app_spec_template: appspec.yml
-        :application_name: SimpleApp
+        :application_name: DemoApplication
         :deploy_mapping:
             - :branch: master
               :action: deploy
-              :deployment_group: SimpleDG
-              :revision: '{"revisionType":"S3","s3Location":{"bucket":"solano-sds","bundleType":"tgz","key":"TestApp.tgz"}}'
+              :deployment_group: DemoFleet
+              :revision: '{"revisionType":"S3","s3Location":{"bucket":"solano-sts-test2","bundleType":"tgz","key":"TestApp.tgz"}}'
             - :branch: nov_4_changes
               :action: deploy
               :deployment_group: SimpleDG
-              :revision: '{"revisionType":"S3","s3Location":{"bucket":"solano-sds","bundleType":"tgz","key":"Nov4Changes.tgz"}}'
+              :revision: '{"revisionType":"S3","s3Location":{"bucket":"solano-sts-test2","bundleType":"tgz","key":"Nov4Changes.tgz"}}'
             - :branch: test*
               :action: publish
               :revision: '{"revisionType":"S3","s3Location":{"bucket":"solano-sds","bundleType":"tar","key":"Test-:branch-:session_id.tar"}}'
